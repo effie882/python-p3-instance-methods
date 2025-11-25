@@ -11,7 +11,7 @@ class TestPerson:
 
     def test_is_class(self):
         '''is a class with the name "Person"'''
-        guido = Person()
+        guido = Person("Guido")
         assert(type(guido) == Person)
 
 class TestTalk:
@@ -19,12 +19,12 @@ class TestTalk:
 
     def test_is_method(self):
         '''is an instance method'''
-        guido = Person()
+        guido = Person("Guido")
         assert(type(guido.talk) == types.MethodType)
 
     def test_prints_hello_world(self):
         '''prints "Hello World!"'''
-        guido = Person()
+        guido = Person("Guido")
         captured_out = io.StringIO()
         sys.stdout = captured_out
         guido.talk()
@@ -36,12 +36,12 @@ class TestWalk:
 
     def test_is_method(self):
         '''is an instance method'''
-        guido = Person()
+        guido = Person("Guido")
         assert(type(guido.walk) == types.MethodType)
 
     def test_prints_the_person_is_walking(self):
         '''prints "The person is walking."'''
-        guido = Person()
+        guido = Person("Guido")
         captured_out = io.StringIO()
         sys.stdout = captured_out
         guido.walk()
